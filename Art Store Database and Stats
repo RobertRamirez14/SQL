@@ -1,0 +1,29 @@
+--Create an Art Supply store database
+
+CREATE TABLE art_supplies
+(id INTEGER PRIMARY KEY, item TEXT, aisle TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO art_supplies VALUES
+(1, "copic_markers", "drawing", 300, 9),
+(2, "acrylic_brushes", "brushes", 50, 3),
+(3, "pencils", "drawing", 100, 2),
+(4, "prisma_markers", "drawing", 300, 7),
+(5, "sketch_pad", "paper_boards", 25, 10),
+(6, "canvas", "surfaces", 30, 15),
+(7, "oil_brushes", "brushes", 27, 4),
+(8, "prisma_color_pencils", "drawing", 21, 75),
+(9, "molotov_pens", "drawing", 16, 16),
+(10, "easel", "furniture", 7, 50),
+(11, "erasers", "drawing", 13, 1),
+(12, "pottery clar", "modeling", 11, 15),
+(13, "sponges", "modeling", 23, 4),
+(14, "canvas_rolls", "surfaces", 10, 85),
+(15, "table_lamp", "furniture", 8, 115);
+
+--Display the store database by price
+
+SELECT * FROM art_supplies ORDER BY price;
+
+--Display the total quantity of items in stock
+
+SELECT SUM(quantity) FROM art_supplies;
