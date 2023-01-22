@@ -1,3 +1,5 @@
+--Create a database of musical artists.
+
 CREATE TABLE artists (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
@@ -29,6 +31,8 @@ INSERT INTO artists (name, country, genre)
 INSERT INTO artists (name, country, genre)
     VALUES ("Bob Marley", "Jamaica", "Reggae");
 
+--Create a database of songs by the musical artists.
+
 CREATE TABLE songs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     artist TEXT,
@@ -57,8 +61,14 @@ INSERT INTO songs (artist, title)
 INSERT INTO songs (artist, title)
     VALUES ("Guns N' Roses", "Don't cry");
     
+--Display song titles from the artist Queen, from their respective databases.
+
 SELECT title FROM songs WHERE artist ="Queen";
 
+--Display all artists in the pop genre.
+
 SELECT name FROM artists WHERE genre="Pop";
+
+--Display all song titles from artists in the pop genre.
 
 SELECT title FROM songs WHERE artist IN(SELECT name FROM artists WHERE genre= "Pop");
